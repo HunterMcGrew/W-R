@@ -6,10 +6,20 @@
 
 body {
     background-color: var(--bg-color);
+    overflow-x: hidden;
 }
 
 header {
     height: 55px;
+}
+
+header a {
+    text-decoration: none;
+    color: white;
+}
+
+header a:hover {
+    color: white;
 }
 
 .headerText {
@@ -48,3 +58,38 @@ header {
     width: 95%;
     height: 40px;
 }
+
+.forcastContainer {
+    background-color: var(--ov-color);
+    margin: 4% auto;
+    height: auto;
+    width: 90vw;
+    overflow: visible;
+    box-shadow: 4px 4px 8px rgb(15, 15, 15, 0.15),
+                4px 4px 16px rgb(15, 15, 15, 0.15);
+    /* box-shadow: 
+        0px 1px 1px rgb(0, 0, 0, .1),
+        0px 2px 2px rgb(0, 0, 0, .1),
+        0px 4px 4px rgb(0, 0, 0, .1),
+        0px 8px 8px rgb(0, 0, 0, .1),
+        0px 16px 16px rgb(0, 0, 0, .1); */
+}
+
+.cityName {
+    font-size: 28px;
+}
+
+.todayForcast {
+    margin: 10px;
+}
+
+.forcastCards {
+    margin: 10px 0 0 10px;
+    min-width: 200px;
+    height: auto;
+}
+
+.todayTitle {
+    font-size: 24px;
+}
+
