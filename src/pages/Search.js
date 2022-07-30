@@ -64,6 +64,13 @@ const Search = () => {
 
     )
     } else {
+        
+        let date = data.data[0].datetime.split("-");
+        let date1 = data.data[1].datetime.split("-");
+        let date2 = data.data[2].datetime.split("-");
+        let date3 = data.data[3].datetime.split("-");
+        let date4 = data.data[4].datetime.split("-");
+        let date5 = data.data[5].datetime.split("-");
 
         return (
 
@@ -77,55 +84,60 @@ const Search = () => {
                 <div className="row">
     
                     {/* side panel to display todays forcast */}
-                    <div className="col-4">
+                    <div className="col-4 todayForcastContainer">
     
-                        <div className="todayForcast">
-                            <p className="todayTitle">Today's Forcast</p>
-                            <p className="today">Temp: {data.data[0].temp}&#8457;</p>
-                            <p className="today">Wind: {data.data[0].wind_spd} MPH</p>
-                            <p className="today">Precipitation: {data.data[0].pop}%</p>
+                        <div className="todayForcast d-flex flex-column align-items-stretch rounded-4">
+                            <p className="todayTitle ms-2">Today's Forcast</p>
+                            <p className="today ms-2">Temp: {data.data[0].temp}&#8457;</p>
+                            <p className="today ms-2">Wind: {data.data[0].wind_spd} MPH</p>
+                            <p className="today ms-2">Precipitation: {data.data[0].pop}%</p>
                         </div>
     
                     </div>
     
                     {/* Main content displaying future forcasts */}
-                    <div className="col-8">
+                    <div className="col-8 mobileWide">
     
-                        <div className="d-flex flex-wrap">
+                        <div className="d-flex forcastCardsContainer flex-wrap gap-3">
     
-                            <div className="forcastCards ">
-                                <p className="future">Date</p>
-                                <p className="future">Temp: {data.data[1].temp}&#8457;</p>
-                                <p className="future">Wind: {data.data[1].wind_spd} MPH</p>
-                                <p className="future">Precipitation: {data.data[1].pop}%</p>
+                            <div className="forcastCards d-flex flex-column align-items-stretch rounded-4">
+                                <p></p>
+                                <p className="future ms-2">{date1[1]}-{date1[2]}-{date1[0]}</p>
+                                <p className="future ms-2">Temp: {data.data[1].temp}&#8457;</p>
+                                <p className="future ms-2">Wind: {data.data[1].wind_spd} MPH</p>
+                                <p className="future ms-2">Precipitation: {data.data[1].pop}%</p>
                             </div>
     
-                            <div className="forcastCards ">
-                                <p className="future">Date</p>
-                                <p className="future">Temp: {data.data[2].temp}&#8457;</p>
-                                <p className="future">Wind: {data.data[2].wind_spd} MPH</p>
-                                <p className="future">Precipitation: {data.data[2].pop}%</p>
+                            <div className="forcastCards d-flex flex-column align-items-stretch rounded-4">
+                                <p></p>
+                                <p className="future ms-2">{date2[1]}-{date2[2]}-{date2[0]}</p>
+                                <p className="future ms-2">Temp: {data.data[2].temp}&#8457;</p>
+                                <p className="future ms-2">Wind: {data.data[2].wind_spd} MPH</p>
+                                <p className="future ms-2">Precipitation: {data.data[2].pop}%</p>
                             </div>
     
-                            <div className="forcastCards ">
-                                <p className="future">Date</p>
-                                <p className="future">Temp: {data.data[3].temp}&#8457;</p>
-                                <p className="future">Wind: {data.data[3].wind_spd} MPH</p>
-                                <p className="future">Precipitation: {data.data[3].pop}%</p>
+                            <div className="forcastCards d-flex flex-column align-items-stretch rounded-4">
+                                <p></p>
+                                <p className="future ms-2">{date3[1]}-{date3[2]}-{date3[0]}</p>
+                                <p className="future ms-2">Temp: {data.data[3].temp}&#8457;</p>
+                                <p className="future ms-2">Wind: {data.data[3].wind_spd} MPH</p>
+                                <p className="future ms-2">Precipitation: {data.data[3].pop}%</p>
                             </div>
     
-                            <div className="forcastCards ">
-                                <p className="future">Date</p>
-                                <p className="future">Temp: {data.data[4].temp}&#8457;</p>
-                                <p className="future">Wind: {data.data[4].wind_spd} MPH</p>
-                                <p className="future">Precipitation: {data.data[4].pop}%</p>
+                            <div className="forcastCards d-flex flex-column align-items-stretch rounded-4">
+                                <p></p>
+                                <p className="future ms-2">{date4[1]}-{date4[2]}-{date4[0]}</p>
+                                <p className="future ms-2">Temp: {data.data[4].temp}&#8457;</p>
+                                <p className="future ms-2">Wind: {data.data[4].wind_spd} MPH</p>
+                                <p className="future ms-2">Precipitation: {data.data[4].pop}%</p>
                             </div>
     
-                            <div className="forcastCards ">
-                                <p className="future">Date</p>
-                                <p className="future">Temp: {data.data[5].temp}&#8457;</p>
-                                <p className="future">Wind: {data.data[5].wind_spd} MPH</p>
-                                <p className="future">Precipitation: {data.data[5].pop}%</p>
+                            <div className="forcastCards d-flex flex-column align-items-stretch rounded-4">
+                                <p></p>
+                                <p className="future ms-2">{date5[1]}-{date5[2]}-p{date5[0]}</p>
+                                <p className="future ms-2">Temp: {data.data[5].temp}&#8457;</p>
+                                <p className="future ms-2">Wind: {data.data[5].wind_spd} MPH</p>
+                                <p className="future ms-2">Precipitation: {data.data[5].pop}%</p>
                             </div>
                         </div>
     

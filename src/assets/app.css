@@ -23,7 +23,10 @@ header a:hover {
 }
 
 .headerText {
-    color: var(--headings)
+    color: var(--headings);
+    text-shadow: 4px 4px 4px rgb(15, 15, 15, 0.15),
+                4px 4px 8px rgb(15, 15, 15, 0.15)
+    ;
 }
 
 .searchContainer {
@@ -60,13 +63,13 @@ header a:hover {
 }
 
 .forcastContainer {
-    background-color: var(--ov-color);
-    margin: 4% auto;
+    /* background-color: var(--ov-color); */
+    margin: 2% auto;
     height: auto;
     width: 90vw;
     overflow: visible;
-    box-shadow: 4px 4px 8px rgb(15, 15, 15, 0.15),
-                4px 4px 16px rgb(15, 15, 15, 0.15);
+    /* box-shadow: 4px 4px 8px rgb(15, 15, 15, 0.15),
+                4px 4px 16px rgb(15, 15, 15, 0.15); */
     /* box-shadow: 
         0px 1px 1px rgb(0, 0, 0, .1),
         0px 2px 2px rgb(0, 0, 0, .1),
@@ -77,19 +80,60 @@ header a:hover {
 
 .cityName {
     font-size: 28px;
+    font-weight: 500;
+    color: var(--ov-color);
+    text-shadow: 2px 4px 4px rgb(15, 15, 15, 0.25),
+                2px 4px 8px rgb(15, 15, 15, 0.25)
+    ;
 }
 
 .todayForcast {
-    margin: 10px;
+    background-color: var(--ov-color);
+    box-shadow: 4px 4px 8px rgb(15, 15, 15, 0.15),
+                4px 4px 16px rgb(15, 15, 15, 0.15)
+    ;
+    height: 100%;
+    overflow-wrap: break-word;
 }
 
 .forcastCards {
-    margin: 10px 0 0 10px;
-    min-width: 200px;
+    background-color: var(--ov-color);
+    width: 250px;
+    min-width: 100px;
+    /* max-width: 400px; */
     height: auto;
+    box-shadow: 4px 4px 8px rgb(15, 15, 15, 0.15),
+                4px 4px 16px rgb(15, 15, 15, 0.15)
+    ;
+    overflow-wrap: break-word;
 }
 
 .todayTitle {
     font-size: 24px;
 }
 
+@media (max-width: 821px) {
+    .todayForcastContainer {
+        width: 100%;
+        margin-bottom: 16px;
+    }
+    
+    .forcastCardsContainer {
+        flex-direction: column;
+    }
+
+    .forcastCards {
+        width: 100%;
+    }
+
+    .mobileWide {
+        width: 100%;
+    }
+}
+
+@media (min-width: 822px) {
+    .forcastCardsContainer {
+        flex-direction: wrap;
+    }
+
+}
