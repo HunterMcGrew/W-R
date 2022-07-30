@@ -12,6 +12,10 @@ const Search = () => {
     const [data, setData] = useState();
 
     const FetchWeather = async () => {
+
+        if (!userCity) {
+            alert("Please enter a City, State"); // make this a better function later
+        } 
     
         // const key = "88f56688097f82e5c0a415624cb95159";  // key for open weathermap
         // const units = "imperial";
@@ -50,7 +54,7 @@ const Search = () => {
             <form className="searchForm" id="">
                 <p className="searchText">Search for a city</p>
                 <div className="searchField d-flex justify-content-center">
-                    <TextField className="cityTextField" id="cityName" type="text" label="City Name" variant="outlined" value={userCity} onChange={handleChange} />
+                    <TextField className="cityTextField" id="cityName" type="text" label="City Name, State" variant="outlined" value={userCity} onChange={handleChange} />
                 </div>
                 <div className="d-flex justify-content-center">
                     <hr className="hrLine"></hr>
