@@ -1,11 +1,12 @@
 :root {
-    --bg-color: rgb(0, 135, 231);
-    --ov-color: rgb(235, 235, 235);
+    --blue: rgba(129, 106, 233, 0.877);
+    --blue_old: rgb(0, 135, 231);
+    --white: rgb(233, 233, 233);
     --headings: white;
 }
 
 body {
-    background-color: var(--bg-color);
+    background-color: var(--blue_old);
     overflow-x: hidden;
 }
 
@@ -30,10 +31,14 @@ header a:hover {
 }
 
 .searchContainer {
-    background-color: var(--ov-color);
+    background-color: var(--white);
     margin: 5% auto;
     height: 75vh;
     width: 70vw;
+    box-shadow: 2px 4px 4px rgb(15, 15, 15, 0.15),
+                2px 4px 8px rgb(15, 15, 15, 0.15),
+                2px 4px 16px rgb(15, 15, 15, 0.15)
+    ;
     /* width: 300px;
     height: 600px; */
 }
@@ -60,10 +65,14 @@ header a:hover {
 #searchBtn {
     width: 95%;
     height: 40px;
+    /* background-color: rgb(255, 192, 239);
+    color: var(--blue); */
+    font-size: 16px;
+    font-weight: 600;
 }
 
 .forcastContainer {
-    /* background-color: var(--ov-color); */
+    /* background-color: var(--white); */
     margin: 2% auto;
     height: auto;
     width: 90vw;
@@ -81,14 +90,14 @@ header a:hover {
 .cityName {
     font-size: 28px;
     font-weight: 500;
-    color: var(--ov-color);
+    color: var(--headings);
     text-shadow: 2px 4px 4px rgb(15, 15, 15, 0.25),
                 2px 4px 8px rgb(15, 15, 15, 0.25)
     ;
 }
 
 .todayForcast {
-    background-color: var(--ov-color);
+    background-color: var(--white);
     box-shadow: 4px 4px 8px rgb(15, 15, 15, 0.15),
                 4px 4px 16px rgb(15, 15, 15, 0.15)
     ;
@@ -97,7 +106,7 @@ header a:hover {
 }
 
 .forcastCards {
-    background-color: var(--ov-color);
+    background-color: var(--white);
     width: 250px;
     min-width: 100px;
     /* max-width: 400px; */
