@@ -28,10 +28,9 @@ const Search = () => {
             const response = await fetch(requestUrl);
             const result = await response.json();
             if (response.ok) {
-                console.log("result", result);
+                // console.log("result", result);
                 setData(result);
             } 
-
         } catch (err) {
             if (err) throw err;
             console.log(err);
@@ -42,6 +41,31 @@ const Search = () => {
     const handleChange = (e) => {
         setUserCity(e.target.value);
     };
+
+    const timeFormat = (value) => {
+
+        const format = (num) => {
+            return num.toString().padStart(2, "0");
+        }
+
+        let unix = new Date(value * 1000)        
+        let hours = unix.getHours();
+        // conditional to change it from 24 hr clock to 12 hours
+        if (hours > 12) {
+            hours -= 12;
+        } else if (hours === 0) {
+            hours = 12;
+        }
+        let minutes = unix.getMinutes();
+        let time = `${format(hours)}:${format(minutes)}`;
+
+        return time;
+    };
+
+    const newSearch = () => {
+        setData();
+    }
+
 
     console.log("userCity", userCity);
     console.log("data", data)
@@ -84,6 +108,12 @@ const Search = () => {
                         <p className="cityName">{data.city_name}, {data.state_code}</p>
                     </div>
                 </div>
+
+                <div className="row">
+                    <div className="col-12 d-flex justify-content-center align-items-center">
+                        <Button variant="contained" className="rounded-2 mt-1 mb-4" id="newSearchBtn" onClick={newSearch}>New Search</Button>
+                    </div>
+                </div>
     
                 <div className="row">
     
@@ -93,8 +123,11 @@ const Search = () => {
                         <div className="todayForcast d-flex flex-column align-items-stretch rounded-4">
                             <p className="todayTitle ms-2">Today's Forcast</p>
                             <p className="today ms-2">Temp: {data.data[0].temp}&#8457;</p>
-                            <p className="today ms-2">Wind: {data.data[0].wind_spd} MPH</p>
+                            <p className="today ms-2">Wind: {data.data[0].wind_spd} MPH {data.data[0].wind_cdir}</p>
+                            <p className="today ms-2">Humidity: {data.data[0].rh}%</p>
                             <p className="today ms-2">Precipitation: {data.data[0].pop}%</p>
+                            <p className="today ms-2">Sunrise: {timeFormat(data.data[0].sunrise_ts)} AM</p>
+                            <p className="today ms-2">Sunset: {timeFormat(data.data[0].sunset_ts)} PM</p>
                         </div>
     
                     </div>
@@ -108,44 +141,57 @@ const Search = () => {
                                 <p></p>
                                 <p className="future ms-2">{date1[1]}-{date1[2]}-{date1[0]}</p>
                                 <p className="future ms-2">Temp: {data.data[1].temp}&#8457;</p>
-                                <p className="future ms-2">Wind: {data.data[1].wind_spd} MPH</p>
+                                <p className="future ms-2">Wind: {data.data[1].wind_spd} MPH {data.data[1].wind_cdir}</p>
+                                <p className="future ms-2">Humidity: {data.data[1].rh}%</p>
                                 <p className="future ms-2">Precipitation: {data.data[1].pop}%</p>
+                                <p className="future ms-2">Sunrise: {timeFormat(data.data[1].sunrise_ts)} AM</p>
+                                <p className="future ms-2">Sunrise: {timeFormat(data.data[1].sunset_ts)} PM</p>
                             </div>
     
                             <div className="forcastCards d-flex flex-column align-items-stretch rounded-4">
                                 <p></p>
                                 <p className="future ms-2">{date2[1]}-{date2[2]}-{date2[0]}</p>
                                 <p className="future ms-2">Temp: {data.data[2].temp}&#8457;</p>
-                                <p className="future ms-2">Wind: {data.data[2].wind_spd} MPH</p>
+                                <p className="future ms-2">Wind: {data.data[2].wind_spd} MPH {data.data[2].wind_cdir}</p>
+                                <p className="future ms-2">Humidity: {data.data[2].rh}%</p>
                                 <p className="future ms-2">Precipitation: {data.data[2].pop}%</p>
+                                <p className="future ms-2">Sunrise: {timeFormat(data.data[2].sunrise_ts)} AM</p>
+                                <p className="future ms-2">Sunrise: {timeFormat(data.data[2].sunset_ts)} PM</p>
                             </div>
     
                             <div className="forcastCards d-flex flex-column align-items-stretch rounded-4">
                                 <p></p>
                                 <p className="future ms-2">{date3[1]}-{date3[2]}-{date3[0]}</p>
                                 <p className="future ms-2">Temp: {data.data[3].temp}&#8457;</p>
-                                <p className="future ms-2">Wind: {data.data[3].wind_spd} MPH</p>
+                                <p className="future ms-2">Wind: {data.data[3].wind_spd} MPH {data.data[3].wind_cdir}</p>
+                                <p className="future ms-2">Humidity: {data.data[3].rh}%</p>
                                 <p className="future ms-2">Precipitation: {data.data[3].pop}%</p>
+                                <p className="future ms-2">Sunrise: {timeFormat(data.data[3].sunrise_ts)} AM</p>
+                                <p className="future ms-2">Sunrise: {timeFormat(data.data[3].sunset_ts)} PM</p>
                             </div>
     
                             <div className="forcastCards d-flex flex-column align-items-stretch rounded-4">
                                 <p></p>
                                 <p className="future ms-2">{date4[1]}-{date4[2]}-{date4[0]}</p>
                                 <p className="future ms-2">Temp: {data.data[4].temp}&#8457;</p>
-                                <p className="future ms-2">Wind: {data.data[4].wind_spd} MPH</p>
+                                <p className="future ms-2">Wind: {data.data[4].wind_spd} MPH {data.data[4].wind_cdir}</p>
+                                <p className="future ms-2">Humidity: {data.data[4].rh}%</p>
                                 <p className="future ms-2">Precipitation: {data.data[4].pop}%</p>
+                                <p className="future ms-2">Sunrise: {timeFormat(data.data[4].sunrise_ts)} AM</p>
+                                <p className="future ms-2">Sunrise: {timeFormat(data.data[4].sunset_ts)} PM</p>
                             </div>
     
                             <div className="forcastCards d-flex flex-column align-items-stretch rounded-4">
                                 <p></p>
-                                <p className="future ms-2">{date5[1]}-{date5[2]}-p{date5[0]}</p>
+                                <p className="future ms-2">{date5[1]}-{date5[2]}-{date5[0]}</p>
                                 <p className="future ms-2">Temp: {data.data[5].temp}&#8457;</p>
-                                <p className="future ms-2">Wind: {data.data[5].wind_spd} MPH</p>
+                                <p className="future ms-2">Wind: {data.data[5].wind_spd} MPH {data.data[5].wind_cdir}</p>
+                                <p className="future ms-2">Humidity: {data.data[5].rh}%</p>
                                 <p className="future ms-2">Precipitation: {data.data[5].pop}%</p>
+                                <p className="future ms-2">Sunrise: {timeFormat(data.data[5].sunrise_ts)} AM</p>
+                                <p className="future ms-2">Sunrise: {timeFormat(data.data[5].sunset_ts)} PM</p>
                             </div>
                         </div>
-    
-                        {/* needs a flexbox inside this box */}
     
                     </div>
     

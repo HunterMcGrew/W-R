@@ -71,6 +71,11 @@ header a:hover {
     font-weight: 600;
 }
 
+#newSearchBtn {
+    background-color: grey;
+    font-weight: 600;
+}
+
 .forcastContainer {
     /* background-color: var(--white); */
     margin: 2% auto;
