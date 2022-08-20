@@ -11,7 +11,8 @@ const Search = () => {
     const [userCity, setUserCity] = useState("");
     const [data, setData] = useState();
 
-    const FetchWeather = async () => {
+    const FetchWeather = async (e) => {
+        e.preventDefault();
 
         if (!userCity) {
             alert("Please enter a City, State"); // make this a better function later
@@ -67,8 +68,8 @@ const Search = () => {
     }
 
 
-    console.log("userCity", userCity);
-    console.log("data", data)
+    // console.log("userCity", userCity);
+    // console.log("data", data)
 
     if (!data) {
     return (
@@ -84,7 +85,7 @@ const Search = () => {
                     <hr className="hrLine"></hr>
                 </div>
                 <div className="d-flex justify-content-center">
-                    <Button variant="contained" className="rounded-2" id="searchBtn" onClick={FetchWeather}>Search</Button>
+                    <Button variant="contained" className="rounded-2" id="searchBtn" type="submit" onClick={FetchWeather}>Search</Button>
                 </div>
             </form>
 
