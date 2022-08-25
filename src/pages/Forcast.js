@@ -26,35 +26,35 @@ const Forcast = () => {
                     <div className="d-flex flex-wrap">
 
                         <div className="forcastCards ">
-                            <p className="future">Date</p>
+                            <p className="future futureDate">Date</p>
                             <p className="future">Temp:</p>
                             <p className="future">Wind:</p>
                             <p className="future">Precipitation:</p>
                         </div>
 
                         <div className="forcastCards ">
-                            <p className="future">Date</p>
+                            <p className="future futureDate">Date</p>
                             <p className="future">Temp:</p>
                             <p className="future">Wind:</p>
                             <p className="future">Precipitation:</p>
                         </div>
 
                         <div className="forcastCards ">
-                            <p className="future">Date</p>
+                            <p className="future futureDate">Date</p>
                             <p className="future">Temp:</p>
                             <p className="future">Wind:</p>
                             <p className="future">Precipitation:</p>
                         </div>
 
                         <div className="forcastCards ">
-                            <p className="future">Date</p>
+                            <p className="future futureDate">Date</p>
                             <p className="future">Temp:</p>
                             <p className="future">Wind:</p>
                             <p className="future">Precipitation:</p>
                         </div>
 
                         <div className="forcastCards ">
-                            <p className="future">Date</p>
+                            <p className="future futureDate">Date</p>
                             <p className="future">Temp:</p>
                             <p className="future">Wind:</p>
                             <p className="future">Precipitation:</p>
